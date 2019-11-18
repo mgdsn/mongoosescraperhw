@@ -18,16 +18,16 @@
       
       var thisId = $(this).attr("data-id");
 
-    $(".modal-footer").append('<button type="button" class="btn btn-secondary submitNote" data-id="' + thisId + '">Add Note</button>');
+    $(".modal-body2").append('<button type="button" class="btn btn-secondary submitNote" data-id="' + thisId + '">Add Note</button>');
       $.ajax({
         method: "GET",
         url: "/articles/" + thisId
       })
 
         .then(function(data) {
-          console.log(data);
           for (var i = 0; i < data.length; i++) {
-            $("#notes").append(data.body);
+            $("#notes").append("<li>" + data[i].body + "</li>");
+            
           }
           $("#results").modal("toggle");
 
@@ -51,13 +51,18 @@
       })
         // With that done
         .then(function(data) {
-          // Log the response
-          console.log(data);
-          // Empty the notes section
-          $("#notes").empty();
+      
+          $("#notes").append("<li>" + data.body + "</li>");
+       
+        
         });
     
       // Also, remove the values entered in the input and textarea for note entry
-      $("#titleinput").val("");
-      $("#bodyinput").val("");
+      $("#noteinput").val("");
     });
+
+    $(document).on("click", ".closeBtn", function() {
+      $("#notes").empty();
+      $(".submitNote").remove();
+    });
+
