@@ -1,0 +1,30 @@
+.jumbotron {
+  background-image: url("../images/synths.jpg");
+  background-size: cover;
+  color:  white;
+}
+
+h1, h2, p, a{
+  text-align: center;
+}
+
+body, .modal-body, .modal-header, .modal-body2, .modal-footer{
+  background-color: rgb(124, 140, 173)!important;
+  font-family: 'Raleway', sans-serif;
+}
+
+.display-4, .lead{
+  background-color: rgb(124, 140, 173);
+}
+
+button{
+  background-color: rgb(153, 165, 189)!important;
+}
+
+textarea{
+margin-left: 5px;
+margin-top: 5px;
+}
+.submitNote{
+margin-bottom: 5px;
+}

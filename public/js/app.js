@@ -4,9 +4,9 @@
     .done(function(){
       $.getJSON("/articles", function(data) {
         for (var i = 0; i < data.length; i++) {
-          $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].headline + 
-          "<br />" + "<a href='"+ data[i].link +"'>" + "Link" + "</a>" + "<br />" + "Summary: " 
-          +  data[i].summary + "</p>" + "<p class='notes' data-id='" + data[i]._id + "'>Notes</p>");
+          $("#articles").append("<h2 data-id='" + data[i]._id + "'>" + data[i].headline + 
+          "</h2><br />" + "<p><a href='"+ data[i].link +"'>" + "External Link" + "</a>" + "<br />" + "Summary: " 
+          +  data[i].summary + "</p><p class='notes' data-id='" + data[i]._id + "'>Notes (Click to view)</p>");
         }
       })
     })
